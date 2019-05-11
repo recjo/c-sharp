@@ -7,4 +7,4 @@ projects developed with C# using Visual Studio
 
 ## Unit Tests
 
-* [Unit Tests](/c-sharp/unittests) - Unit tests for processing JSON data from REST API.
+* [Unit Tests](/unittests) - Unit tests for processing JSON data from REST API.
