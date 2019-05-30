@@ -3,7 +3,7 @@ projects developed with C# using Visual Studio
 
 ## UPS Return Labels (Dependency Injection, Factory Pattern, Provider Model)
 
-* [UPS Return Labels](/ShipCarriers) - This project consumes the UPS Rest API to create a shipping return label in the browser. It uses dependency injection, the factory pattern and provider model.
+* [Ship Carriers](/ShipCarriers) - This project consumes the UPS Rest API to create a shipping return label in the browser. It uses dependency injection, the factory pattern and provider model.
 
 ## Swagger API (Recursion)
 
