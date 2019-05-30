@@ -1,8 +1,8 @@
 # Swagger API / Recusion
 
-I wrote a test utility app to allow QA teams to quickly call any REST API in our system. The test app uses Swagger to fetch all api's and displays the endpoints in a drop-down menu [(screenshot)](/c-sharp/Swagger/images/windowsform.png). When an endpoint is selected from the menu, the app dynamically builds the JSON body needed for a PUT or POST request, by parsing the swagger "definitions" object, and displays a link to paste the JSON in the text box. The app also displays a button for each verb supported (GET/POST/PUT/DELETE). and displays the JSON response in a textbox.
+I wrote a test utility app to allow QA teams to quickly call any REST API in our system. The test app uses Swagger to fetch all api's and displays the endpoints in a drop-down menu [(screenshot)](/Swagger/images/windowsform.png). When an endpoint is selected from the menu, the app dynamically builds the JSON body needed for a PUT or POST request, by parsing the swagger "definitions" object, and displays a link to paste the JSON in the text box. The app also displays a button for each verb supported (GET/POST/PUT/DELETE). and displays the JSON response in a textbox.
 
-My "Swagger" helper class has only one public method, [GetSwaggerEndpoints()](/c-sharp/Swagger/swagger.cs), which calls the local Swagger api "/swagger/docs/v2" to get JSON object of all the api definitons.
+My "Swagger" helper class has only one public method, [GetSwaggerEndpoints()](/Swagger/swagger.cs), which calls the local Swagger api "/swagger/docs/v2" to get JSON object of all the api definitons.
 
 <details>
 <summary>click to see SWAGGER RESPONSE JSON</summary>
