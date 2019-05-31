@@ -1,6 +1,6 @@
 # Unit Tests for Shopify Order JSON
 
-These 16 unit tests ensured the "translator" classes correctly transformed the order JSON from the Shopify API before importing into the orders database.
+These [16 unit tests](/UnitTests/ShopifyTranslationTest.cs) ensured the "Translator" class correctly transformed the order JSON from the Shopify API before importing into the orders database.
 
 Specifically, the unit test targets the algorithms that calculate an order's grand total based upon line item quantity divided by any items discount, item tax, item shipping charge, item shipping discounts, and whether any VAT taxes are deducted from the item price.
 
