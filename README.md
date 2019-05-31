@@ -12,3 +12,7 @@ projects developed with C# using Visual Studio
 ## Unit Tests
 
 * [Unit Tests](/UnitTests) - Unit tests for processing JSON order data from Shopify Orders REST API.
+
+## Label Printer (Zebra LP 2844 printer)
+
+* [Label Printer](/LabelPrinter) - This program prints labels on Zebra LP 2844 printer using the PrintDocument class.
