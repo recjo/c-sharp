@@ -4,18 +4,18 @@ As a developer I took the initaitive to read the RabbitMQ documentation, and cre
 
 <!--- I wrote [confluence documentation](/RabbitMQ/howto.html) for the other developers on how to set up personal RabbitMQ queues for local development. -->
 
-RabbitTransport class
+RabbitTransport class<br />
 The [RabbitTransport](/RabbitMQ/RabbitTransport.cs) class is responsible for pushing messages to the RabbitMQ server.
 
-RabbitListener
+RabbitListener<br />
 The [RabbitListener](/RabbitMQ/RabbitListener.cs) class is responsible for listening to a queue to auto-receive messages from the RabbitMQ server.
 
-RabbitApi class
+RabbitApi class<br />
 The [RabbitApi](/RabbitMQ/RabbitApi.cs) class is responsible for interacting with the RabbitMQ API, to provide external applications with diagostic information about the RabbitMQ server.
 
-Publish
+Publish<br />
 The [Publish](/RabbitMQ/Publish.cs) class is an example of a producer client that sends messages to the RabbitMQ server.
 
-ListenerService
+ListenerService<br />
 [ListenerService](/RabbitMQ/ListenerService.cs) is an example of the Windows Service I set up to continually listen and process messages received from the RabbitMQ server.
 
