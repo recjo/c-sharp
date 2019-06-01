@@ -1,9 +1,9 @@
 # C#
 projects developed with C# using Visual Studio
 
-## UPS REST API Return Labels (Dependency Injection, Factory Pattern, Provider Model)
+## UPS REST API Return Labels<br />(Dependency Injection, Factory Pattern, Provider Model)
 
-* [Ship Carriers](/ShipCarriers) - This project consumes the UPS Rest API to create a shipping return label in the browser. It uses dependency injection, the factory pattern and provider model.
+* [Return Labels](/ShipCarriers) - This project consumes the UPS Rest API to create a shipping return label in the browser. It uses dependency injection, the factory pattern and provider model.
 
 ## Swagger API (Recursion)
 
@@ -19,4 +19,4 @@ projects developed with C# using Visual Studio
 
 ## Barcode Label Printer (Zebra LP 2844 printer)
 
-* [Label Printer](/LabelPrinter) - This program prints barcode labels on Zebra LP 2844 printer using the PrintDocument class.
+* [Barcode Label Printer](/LabelPrinter) - This program prints barcode labels on Zebra LP 2844 printer using the PrintDocument class.
