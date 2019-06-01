@@ -1,7 +1,13 @@
-# Label Printer with Zebra LP 2844 printer
+# Barcode Label Printer with Zebra LP 2844 printer
 
-I was asked to write a program that printed labels to identify different areas of warehouse storage racks. This project was interesting to me because it involved using the PrintDocument class to print labels to a [Zebra LP 2844](/LabelPrinter/images/zebra-lp2844.png) printer. 
+I was asked to write a program that printed barcode labels for various product skus to identify pick locations in the warehouse storage racks. This project was interesting to me because it involved using the PrintDocument class to print barcode labels to a [Zebra LP 2844](/recjo/c-sharp/printer/images/zebra-lp2844.png) printer.
 
-After instantiating the PrintDocument class, I set properties like margins, printer name, paper size, orientation, and assigned the printing method to the PrintPage event handler.
+Program.cs
+[Program.cs](/LabelPrinter/Program.cs) is responsible for processing user input of product sku from the command-line.
 
-This simple command line utility printed 10 copies of a label with warehouse codes from A to W.
+LabelPrinter.cs
+The [LabelPrinter.cs](/LabelPrinter/LabelPrinter.cs) class initializes printer properties in the constructor for settings like margins, printer name, paper size, orientation, and assigning the printing method to the PrintPage event handler.
+
+The LabelPrintHandler() sends the product sku to the label in both plain text and bardcode format to the Zebra printer.
+
+<!--- Click to view a sample [barcode label](/LabelPrinter/images/barcodelabel.jpg). -->
