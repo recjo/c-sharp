@@ -1,4 +1,4 @@
-# UPS Return Labels
+# UPS REST API Return Labels
 This project connects to UPS Rest API to create a shipping return label in the browser.
 
 The program ([starts](start.cs)) by using the [factory pattern](CarrierServiceFactory.cs) to create either a UPS or FedEx instance. Then it calls the CreateReturnLabel() method, which is supported by all providers implementing the [ICarrierService](ICarrierService.cs) interface (UPS/FedEx).
