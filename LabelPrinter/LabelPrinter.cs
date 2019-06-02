@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Drawing;
 using System.Drawing.Printing;
 
@@ -10,7 +7,11 @@ namespace BarcodeLabelPrinter
     public class LabelPrinter
     {
         private PrintDocument pd;
-        protected static string printString;
+        private int LeftEdge;
+        private int TopEdge;
+        private int RightEdge;
+        private int BotEdge;
+        private string printString;
 
         public LabelPrinter()
         {
@@ -21,6 +22,11 @@ namespace BarcodeLabelPrinter
             pd.DefaultPageSettings.PaperSize = new PaperSize("Letter", 400, 600); //5x6 label roll
             pd.PrinterSettings.PrinterName = "ZDesigner LP 2844";
             pd.PrintPage += new PrintPageEventHandler(LabelPrintHandler);
+
+            LeftEdge = 0;
+            TopEdge = 0;
+            RightEdge = 600;
+            BotEdge = 400;
         }
 
         public void print(string sku)
@@ -29,28 +35,27 @@ namespace BarcodeLabelPrinter
             pd.Print();
         }
 
-        private static void LabelPrintHandler(object sender, PrintPageEventArgs ev)
+        private void LabelPrintHandler(object sender, PrintPageEventArgs ev)
         {
             ev.HasMorePages = false;
 
-            Font textFont = new Font("Arial", 60, FontStyle.Bold, GraphicsUnit.Point);
-            Font barcode = new Font("IDAutomationC128S", 36, FontStyle.Regular, GraphicsUnit.Point);
+            var textFont = new Font("Arial", 60, FontStyle.Bold, GraphicsUnit.Point);
+            var barcode = new Font("IDAutomationC128S", 36, FontStyle.Regular, GraphicsUnit.Point);
 
-            StringFormat centerF = new StringFormat();
-            centerF.Alignment = StringAlignment.Center;
-            centerF.LineAlignment = StringAlignment.Center;
+            var centerMid = new StringFormat()
+            {
+                Alignment = StringAlignment.Center,
+                LineAlignment = StringAlignment.Center
+            };
 
-            StringFormat centerBottom = new StringFormat();
-            centerBottom.Alignment = StringAlignment.Center;
-            centerBottom.LineAlignment = StringAlignment.Far;
+            var centerBottom = new StringFormat()
+            {
+                Alignment = StringAlignment.Center,
+                LineAlignment = StringAlignment.Far
+            };
 
-            int LeftEdge = 0;
-            int TopEdge = 0;
-            int RightEdge = 600;
-            int BotEdge = 400;
-
-            Rectangle pageWidthRect2 = new Rectangle(LeftEdge, TopEdge, RightEdge, BotEdge);
-            ev.Graphics.DrawString(printString, textFont, Brushes.Black, pageWidthRect2, centerF);
+            var pageWidthRect2 = new Rectangle(LeftEdge, TopEdge, RightEdge, BotEdge);
+            ev.Graphics.DrawString(printString, textFont, Brushes.Black, pageWidthRect2, centerMid);
             ev.Graphics.DrawString("!" + printString + "!", barcode, Brushes.Black, pageWidthRect2, centerBottom);
         }
     }

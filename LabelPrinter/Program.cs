@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BarcodeLabelPrinter
 {
@@ -11,6 +7,7 @@ namespace BarcodeLabelPrinter
         static void Main(string[] args)
         {
             var sku = string.Empty;
+            var lp = new LabelPrinter();
 
             #if DEBUG
                 args = new[] { "FR-4053-BLK" }; //simulates command-line arguments
@@ -21,19 +18,23 @@ namespace BarcodeLabelPrinter
                 sku = args[0].ToString().ToLower();
             }
 
-            while (String.IsNullOrEmpty(sku))
+            while (true)
             {
                 Console.WriteLine("Enter sku to print (and press Return):");
-                sku = Console.ReadLine();
+                var keyInfo = Console.ReadKey(true);
+                if (keyInfo.Key == ConsoleKey.Q)
+                {
+                    break;
+                }
+                Console.Write(keyInfo.Key);
+                sku = keyInfo.Key + Console.ReadLine();
+
+                Console.WriteLine("Printing: {0}", sku);
+                lp.print(sku);
+
+                //press q to exit
+                Console.WriteLine("Press \"q\" to quit...\n");
             }
-
-            Console.WriteLine("Printing: {0}", sku);
-            var lp = new LabelPrinter();
-            lp.print(sku);
-
-            //press q to exit
-            Console.Write("\nPress \"q\" to quit...");
-            while (Console.ReadKey(true).Key != ConsoleKey.Q) ;
         }
     }
 }
