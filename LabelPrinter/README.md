@@ -10,4 +10,4 @@ The [LabelPrinter.cs](/LabelPrinter/LabelPrinter.cs) class initializes PrintDocu
 
 The LabelPrintHandler() sends the product sku to the Zebra printer label in both plain text and bardcode format.
 
-<!--- Click to view a sample [barcode label](/LabelPrinter/images/barcodelabel.jpg). -->
+Click to view a sample [barcode label](/LabelPrinter/images/barcodelabel.jpg).
